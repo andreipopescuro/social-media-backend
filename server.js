@@ -14,6 +14,10 @@ dbConnect();
 app.use(cors());
 app.use(express.json());
 
+app.get("/api/server/check", (req, res) =>
+  res.status(200).json({ success: true })
+);
+
 app.use("/api/user", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/notification", notificationRoutes);
